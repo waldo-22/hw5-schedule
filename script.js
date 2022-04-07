@@ -6,3 +6,7 @@ function displayTime() {
     console.log(displayTime);
 }
 setInterval(displayTime, 1000);
+
+// localStorage.getItems() {
+//     text.
+// }
