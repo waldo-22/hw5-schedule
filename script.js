@@ -24,9 +24,6 @@ containerEl.addEventListener("click", function(event) {
         console.log(event.target.parentElement.previousElementSibling.value )
         localStorage.setItem(event.target.id, event.target.parentElement.previousElementSibling.value )
         // line 25 is the exact same as 27 if we were to click the save button for 9am
-        localStorage.setItem("9", "test")
-    
-
     }
 }) 
 function displayTime() {
@@ -35,6 +32,17 @@ function displayTime() {
     // console.log(displayTime);
 }
 setInterval(displayTime, 1000);
-
-localStorage.getItem("9")
-
+// let userSubmit = document.querySelector(".text");
+// make unique element and grab from local storage from unique key******
+function renderLastRegistered() {
+    let hours = ["nine", "ten", "eleven", "twelve", "one", "two", "three", "four", "five"]
+    
+    let hoursPt2 = ["9", "10", "11", "12", "1", "2", "3", "4", "5"]
+    
+    for (let i = 0; i < 9; i++) {
+        let userSubmit = localStorage.getItem(hoursPt2 [i]);
+        let textBox = document.getElementById(hours[i]);
+        textBox.innerHTML = userSubmit;
+    }
+}
+renderLastRegistered();
